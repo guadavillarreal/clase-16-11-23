@@ -1,3 +1,4 @@
+//1RA forma de trabajar enviando el obj desde html
 //declaro una funcion siempre arriba
 //func en forma de flecha
 const cambiarTitulo = () => {
@@ -28,3 +29,30 @@ const cambiarTitulo = () => {
   //para modificar el estilo hay varias opc pero uno de ellas y la mas usada es className puedo incluso usar una clase propia creada en la hoja de estilo
   tituloPrincipal.className = 'display-1 text-info';
 };
+//2dA forma de trabajar pidiendo el obj desde la hoja de JS
+
+//func en forma de flecha
+const verMas = ()=>{
+    console.log('Desde la funcion verMas');
+    //creo un prafo nuevo
+    //agrego el prafo en el html
+    //OPCION 1
+    //creo un prafo nuevo
+    //creo una const donde voy a guardar el parrafo nuevo
+    //createElement crea etiquetas del html
+    const parrafoNuevo = document.createElement('p');
+    parrafoNuevo.innerHTML = 'hola';
+    console.log(parrafoNuevo);
+    
+
+    //agrego el prafo en el html
+
+}
+
+//trabajo trayendo un obj desde la hoja de JS
+const btnVerMas = document.getElementById('btnVerMas');
+
+//si quiero agregar un evento por el elemento que elijo, debo de agregar un manejador de eventos
+//en addEventListener el primer parametro que ingreso tiene que ser el nombre del evento que quiero y el segundo nomb de la funcion ('click',verMas)
+//pero si la func no tiene parametros va sin (), en caso de que si tenga se colocan los param dentro de los ()
+btnVerMas.addEventListener('click', btnVerMas)//sin la palabra on, la cual solo va desde el html
