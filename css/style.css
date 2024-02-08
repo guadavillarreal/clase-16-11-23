@@ -1,0 +1,10 @@
+/*para hacer que crezca el body y el footeer valla al fin de la pag*/
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+/*para hacer que crezca el body*/
+main {
+    flex-grow: 1;
+}
