@@ -20,7 +20,7 @@ const cambiarTitulo = () => {
     */
   const tituloPrincipal = document.querySelector("h1");
   //para verificar que este bien el comando y que tenga retorno
-  console.log(tituloPrincipal);
+  //console.log(tituloPrincipal);
   //para modificar un obj puedo utilizar el siguiente metodo- pero no interpreta las etiquetas de HTML
   console.log(tituloPrincipal);
   // tituloPrincipal.innerText = 'nuevo titulo';
@@ -36,12 +36,16 @@ const verMas = ()=>{
     console.log('Desde la funcion verMas');
     //creo un prafo nuevo
     //agrego el prafo en el html
-    //OPCION 1
+    //OPCION 1----------------------------
     //creo un prafo nuevo
     //creo una const donde voy a guardar el parrafo nuevo
-    //createElement crea etiquetas del html
+    //createElement crea etiquetas del html, 'p' la etiqueta que creo en este ej
     const parrafoNuevo = document.createElement('p');
-    parrafoNuevo.innerHTML = 'hola';
+    parrafoNuevo.innerHTML = `Tambien puede añadir oyentes de eventos para responder a interacciones del usuario,
+    como clics o pulsaciones de teclas. Es crucial tener en cuenta el rendimiento al manipular el DOM, ya que 
+    operaciones frecuentes pueden impactar en el rendimiento de la página. En resumen, el DOM proporciona una
+    interfaz poderosa para manipular la estructura y el contenido de la página web, lo que permite crear
+    interacciones dinámicas y experiencias personalizadas para los usuarios.`;
     console.log(parrafoNuevo);
     
 
@@ -53,6 +57,6 @@ const verMas = ()=>{
 const btnVerMas = document.getElementById('btnVerMas');
 
 //si quiero agregar un evento por el elemento que elijo, debo de agregar un manejador de eventos
-//en addEventListener el primer parametro que ingreso tiene que ser el nombre del evento que quiero y el segundo nomb de la funcion ('click',verMas)
+//en addEventListener el primer parametro que ingreso tiene que ser el nombre del evento que quiero-click- y el segundo nomb de la funcion-verMas-('click',verMas)
 //pero si la func no tiene parametros va sin (), en caso de que si tenga se colocan los param dentro de los ()
-btnVerMas.addEventListener('click', btnVerMas)//sin la palabra on, la cual solo va desde el html
+btnVerMas.addEventListener('click', verMas)//sin la palabra on, la cual solo va desde el html
