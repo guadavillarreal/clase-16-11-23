@@ -27,36 +27,48 @@ const cambiarTitulo = () => {
   //p modificar y que interprete las etiquetas en lo que retorna puedo utilizar
   tituloPrincipal.innerHTML = "Titulo generado desde <b> JS </b>";
   //para modificar el estilo hay varias opc pero uno de ellas y la mas usada es className puedo incluso usar una clase propia creada en la hoja de estilo
-  tituloPrincipal.className = 'display-1 text-info';
+  tituloPrincipal.className = "display-1 text-info";
 };
 //2dA forma de trabajar pidiendo el obj desde la hoja de JS
 
 //func en forma de flecha
-const verMas = ()=>{
-    console.log('Desde la funcion verMas');
-    //creo un prafo nuevo
-    //agrego el prafo en el html
-    //OPCION 1----------------------------
-    //creo un prafo nuevo
-    //creo una const donde voy a guardar el parrafo nuevo
-    //createElement crea etiquetas del html, 'p' la etiqueta que creo en este ej
-    const parrafoNuevo = document.createElement('p');
-    parrafoNuevo.innerHTML = `Tambien puede añadir oyentes de eventos para responder a interacciones del usuario,
+const verMas = () => {
+  console.log("Desde la funcion verMas");
+  //creo un prafo nuevo
+  //agrego el prafo en el html
+  //OPCION 1----------------------------
+  //creo un prafo nuevo
+  //creo una const donde voy a guardar el parrafo nuevo
+  //createElement crea etiquetas del html, 'p' la etiqueta que creo en este ej
+  const parrafoNuevo = document.createElement("p");
+  parrafoNuevo.innerHTML = `Tambien puede añadir oyentes de eventos para responder a interacciones del usuario,
     como clics o pulsaciones de teclas. Es crucial tener en cuenta el rendimiento al manipular el DOM, ya que 
     operaciones frecuentes pueden impactar en el rendimiento de la página. En resumen, el DOM proporciona una
     interfaz poderosa para manipular la estructura y el contenido de la página web, lo que permite crear
     interacciones dinámicas y experiencias personalizadas para los usuarios.`;
-    console.log(parrafoNuevo);
-    
-
-    //agrego el prafo en el html
-
-}
+  //agrega una clase de bootstrap , lead resalta
+  parrafoNuevo.className = "lead";
+  //muestra por consola la var creada cuando presiono el btnVerMas
+  console.log(parrafoNuevo);
+  //agrego el prafo en el html
+  //quiero buscar el nodo padre para el nuevo parrafo
+  //getElementsByClassName busca por nombre de clase- getElementsByTagName busca por nombre de etiqueta
+  const seccionDatos = document.getElementsByClassName("mt-5");
+  //console.log(seccionDatos); // muestra el array que encontre con el parametro buscado
+  //selecciona el elemento que quiero desde el array
+  console.log(seccionDatos[0]);
+  //para agregar un nuevo nodo hijo al final
+  //seccionDatos[0].appendChild(parrafoNuevo);
+  //para agregar un nuevo nodo hijo al inicio-principio osea despues del padre sera el primer hijo
+  //seccionDatos[0].prepend(parrafoNuevo);
+  //para agregar un nuevo nodo hijo en el medio-me pide que ingrese lo que deseo ingresar y antes de quien
+  seccionDatos[0].insertBefore(parrafoNuevo, btnVerMas);
+};
 
 //trabajo trayendo un obj desde la hoja de JS
-const btnVerMas = document.getElementById('btnVerMas');
+const btnVerMas = document.getElementById("btnVerMas");
 
 //si quiero agregar un evento por el elemento que elijo, debo de agregar un manejador de eventos
 //en addEventListener el primer parametro que ingreso tiene que ser el nombre del evento que quiero-click- y el segundo nomb de la funcion-verMas-('click',verMas)
 //pero si la func no tiene parametros va sin (), en caso de que si tenga se colocan los param dentro de los ()
-btnVerMas.addEventListener('click', verMas)//sin la palabra on, la cual solo va desde el html
+btnVerMas.addEventListener("click", verMas); //sin la palabra on, la cual solo va desde el html
