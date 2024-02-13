@@ -116,9 +116,25 @@ const verMas = () => {
     btnVerMas.className = "btn btn-outline-info";
   }
 };
+
+//funcion para el btn del FORM-tipo SUBMI
+const obtenetDatos = () => {
+  console.log('Desde la funcion obtenerDatos');
+}
+
+//fin de sector funciones
 const btnVerMas = document.getElementById("btnVerMas");
 
 //si quiero agregar un evento por el elemento que elijo, debo de agregar un manejador de eventos
 //en addEventListener el primer parametro que ingreso tiene que ser el nombre del evento que quiero-click- y el segundo nomb de la funcion-verMas-('click',verMas)
 //pero si la func no tiene parametros va sin (), en caso de que si tenga se colocan los param dentro de los ()
 btnVerMas.addEventListener("click", verMas); //sin la palabra on, la cual solo va desde el html
+
+//evento para el FORM-cuadro de busqueda-
+//creacion de variable para guardar la accion al precionar el click
+const formularioBusqueda = document.querySelector('form');
+//muestra que lo que estoy guardando en la conts creada sea correcto
+console.log(formularioBusqueda);
+//indica que cuando se produzca el eventoSUBMI invoque la funcion OBTENETDATOS
+//addEventListener: es el manejador del evento,submit: el evento,obtenetDatos: la llamda a la funcion 
+formularioBusqueda.addEventListener('submit',obtenetDatos);
