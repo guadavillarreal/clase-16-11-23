@@ -118,8 +118,23 @@ const verMas = () => {
 };
 
 //funcion para el btn del FORM-tipo SUBMI
-const obtenetDatos = () => {
+//siempre debe tener como parametro el obj Event- para poder guardar los datos de los eventos, en este caso el que creamos para el form-btnsubmi
+const obtenetDatos = (e) => {
+//preventDefaul=metodo del obj event, indica que no refresque el form, para poder manipular los datos del form
+  e.preventDefaul();
+  //para chequear lo que es el obj e=event
+  console.log(e);
   console.log('Desde la funcion obtenerDatos');
+  //querySelector busqueda por clase, devuelve el primer elemeto que encuentra
+  //para elem que SON input, texarea, select se UTILIZA VALUE, en este caso guarda solo el txt que esta en el input que se esta guardando en la const
+  //si no me interasa el input solo su contenido pongo el .value, por ejemplo si quiero cambiarle la estetica al imput no deberia tener el .value, guardaria el input completo
+  const inputBusqueda = document.querySelector('.form-control').value
+//en la linea 132 se guarda todo el obj imput, en cambio en la linea 130 solo guarda el txt del imput seleccionado  
+//const inputBusqueda = document.querySelector('.form-control')
+//console.log(inputBusqueda.value);//si guarde todo el obj imput tengoq ue usar el .value para poder ver loque deseo
+  console.log(inputBusqueda);
+  //refresca el form para que se borren los datos que e ingresado y no lo tenga que hacer manual
+  formularioBusqueda.reset;
 }
 
 //fin de sector funciones
